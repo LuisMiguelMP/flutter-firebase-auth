@@ -1,6 +1,6 @@
 # Flutter Firebase Auth
 
-Flutter Project with Firebase Auth, removing '/#/' from URL, including i18n localization, URL Launcher and Effective Dart.
+Flutter Project with Firebase Auth, removing '/#/' from PWA URL, including i18n localization, URL Launcher and Effective Dart.
 
 
 ## Getting Started
