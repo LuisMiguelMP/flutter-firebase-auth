@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
-        title: 'Cheiro Bom ♥',
+        title: 'CheiroBom.app',
         logo: 'assets/logo.png',
         onLogin: (_) => Auth().signIn(_),
         onSignup: (_) => Auth().signUp(_),
