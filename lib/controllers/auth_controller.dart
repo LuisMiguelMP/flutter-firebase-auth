@@ -2,26 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_login/flutter_login.dart';
 
 class Auth {
-  Future<String> signUp(LoginData loginData) async {
-    try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-          email: loginData.name, password: loginData.password);
-      return null;
-    } on FirebaseAuthException catch (error) {
-      return validateCredentials(error);
-    }
-  }
-
-  Future<String> signIn(LoginData loginData) async {
-    try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: loginData.name, password: loginData.password);
-      return null;
-    } on FirebaseAuthException catch (error) {
-      return validateCredentials(error);
-    }
-  }
-
   String validateCredentials(FirebaseAuthException error) {
     var errorMessage;
     if (error.code == 'weak-password') {
@@ -38,8 +18,36 @@ class Auth {
     return errorMessage;
   }
 
-  // ignore: type_annotate_public_apis
-  signOut() async {
+  Future<String> signUp(LoginData loginData) async {
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: loginData.name, password: loginData.password);
+      return null;
+    } on FirebaseAuthException catch (error) {
+      return validateCredentials(error);
+    }
+  }
+
+  Future<String> resetPassword(LoginData loginData) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: loginData.name);
+      return null;
+    } on FirebaseAuthException catch (error) {
+      return validateCredentials(error);
+    }
+  }
+
+  Future<String> signIn(LoginData loginData) async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: loginData.name, password: loginData.password);
+      return null;
+    } on FirebaseAuthException catch (error) {
+      return validateCredentials(error);
+    }
+  }
+
+  Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
   }
 }

@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
         logo: '',
         onLogin: (_) => Auth().signIn(_),
         onSignup: (_) => Auth().signUp(_),
-        onRecoverPassword: (_) => Auth().signOut(),
+        onRecoverPassword: (_) => Auth().resetPassword(_),
         onSubmitAnimationCompleted: () {
           var auth = FirebaseAuth.instance;
           auth.authStateChanges().listen((User user) async {
