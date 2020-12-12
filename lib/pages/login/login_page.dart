@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return FlutterLogin(
         title: 'Cheiro Bom ♥',
-        logo: '',
+        logo: 'assets/logo.png',
         onLogin: (_) => Auth().signIn(_),
         onSignup: (_) => Auth().signUp(_),
         onRecoverPassword: (_) => Auth().resetPassword(_),
