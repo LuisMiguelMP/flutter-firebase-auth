@@ -32144,7 +32144,7 @@ return M.aa8(Q.aa7(!0,M.cY(C.P,T.jr(H.a([T.aa6(H.a([L.eq("Bem-vindx!",s,s,s,s,s,
 K.tq.prototype={
 a9:function(){return new K.JD(C.m)}}
 K.JD.prototype={
-J:function(a,b){return new E.rG(new K.a3X(),new K.a3Y(),new K.a3Z(),"Cheiro Bom \u2665","assets/logo.png",new K.a4_(b),null)}}
+J:function(a,b){return new E.rG(new K.a3X(),new K.a3Y(),new K.a3Z(),"CheiroBom.app","assets/logo.png",new K.a4_(b),null)}}
 K.a3Y.prototype={
 $1:function(a){return new T.qE().pl(a)},
 $S:74}
